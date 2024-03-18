@@ -415,10 +415,9 @@ def routing(uploaded_file):
             st.subheader("Order Level Results")
             st.dataframe(new_df)
 
-
-            st.subheader("Visualization")
-
             for i in new_df.Vehicle.unique():
+                vehicle = "Visualization: " + str(i)
+                st.subheader(vehicle)
                 plot_vehicle_route_with_navigation(new_df, i)
 
         else:
